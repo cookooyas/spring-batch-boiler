@@ -1,13 +1,24 @@
+// spring-batch-boiler/build.gradle
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:3.3.0"
+    }
+}
+
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.5'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.springframework.boot' version '3.3.0' apply false
+    id 'io.spring.dependency-management' version '1.1.5' apply false
 }
 
 allprojects {
     group = 'com.example.batch'
     version = '1.0.0'
-    sourceCompatibility = '17'
 
     repositories {
         mavenCentral()
@@ -19,18 +30,13 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+    java {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
     dependencies {
-        // 스프링 배치 기본
-        implementation 'org.springframework.boot:spring-boot-starter-batch'
-        // 데이터베이스 관련 (MyBatis, MySQL, MariaDB)
-        implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-        runtimeOnly 'com.mysql:mysql-connector-j'
-        runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-        // 코드를 줄여주는 도구 (Getter/Setter 자동 생성)
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
-        
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        testImplementation 'org.springframework.batch:spring-batch-test'
     }
 }

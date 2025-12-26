@@ -1,0 +1,15 @@
+plugins {
+    // 하위 모듈에 의존성을 전파하기 위해 java-library가 필수입니다.
+    id 'java-library' 
+}
+
+dependencies {
+    // api로 선언해야 이 common을 가져다 쓰는 job 모듈에서도 라이브러리가 보입니다.
+    api 'org.springframework.boot:spring-boot-starter-batch'
+    api 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    api 'com.mysql:mysql-connector-j'
+    api 'org.mariadb.jdbc:mariadb-java-client'
+}
+
+bootJar { enabled = false }
+jar { enabled = true }
