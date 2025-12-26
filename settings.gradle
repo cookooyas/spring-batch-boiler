@@ -1,0 +1,4 @@
+rootProject.name = 'spring-batch-boiler'
+
+include 'replication-core'
+include 'job-mysql-to-maria-a'
