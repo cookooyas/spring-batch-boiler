@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include: db  # application-db.yml을 포함시킵니다.
+  batch:
+    jdbc:
+      initialize-schema: always # MariaDB에 배치 메타 테이블을 자동으로 생성합니다.
+    job:
+      enabled: true

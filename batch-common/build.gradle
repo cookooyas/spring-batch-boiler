@@ -8,7 +8,8 @@ dependencies {
     api 'org.springframework.boot:spring-boot-starter-batch'
     api 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
     api 'com.mysql:mysql-connector-j'
-    api 'org.mariadb.jdbc:mariadb-java-client'
+    // api 'org.mariadb.jdbc:mariadb-java-client'
+    api 'org.postgresql:postgresql'
 }
 
 bootJar { enabled = false }

@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    # 1. 데이터를 읽어올 원본 DB (MySQL)
+    # mysql - rockylinux  =>  https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/
+    source:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/source_db
+      username: batch
+      password: Batch1234!
+
+    # 2. 데이터를 저장하고 배치 정보가 기록될 대상 DB (Postgresql)
+    target:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://127.0.0.1:5432/target_db
+      username: batch
+      password: Batch1234!
