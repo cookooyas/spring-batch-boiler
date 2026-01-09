@@ -37,7 +37,7 @@ public class MyBatisConfig {
         factoryBean.setDataSource(dataSource);
         
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        factoryBean.setMapperLocations(resolver.getResources("classpath*:mapper/" + name + "/**/*.xml"));
+        factoryBean.setMapperLocations(resolver.getResources("classpath*:mapper/**/*.xml"));
         
         factoryBean.afterPropertiesSet();
         

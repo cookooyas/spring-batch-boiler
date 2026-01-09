@@ -1,5 +1,5 @@
 rootProject.name = 'spring-batch-boiler'
 
-include 'batch-common'
+include 'batch-common-v1'
 include 'batch-job-a'
 include 'batch-job-readOnly'

@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    # common의 정보를 참조하여 할당
+    source: "db-pool.mysql-db"
+    target: "db-pool.oracle-db"

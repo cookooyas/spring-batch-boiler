@@ -13,7 +13,6 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import org.springframework.core.io.Resource;
@@ -23,22 +22,22 @@ import java.util.Map;
 
 @Slf4j
 @Configuration
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 public class ReadOnlyJobConfig {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
     private final SqlSessionFactory sourceSqlSessionFactory;
 
-    // public ReadOnlyJobConfig(
-    //             JobRepository jobRepository,
-    //             PlatformTransactionManager transactionManager,
-    //             @Qualifier("sourceSqlSessionFactory") SqlSessionFactory sourceSqlSessionFactory
-    //     ) {
-    //         this.jobRepository = jobRepository;
-    //         this.transactionManager = transactionManager;
-    //         this.sourceSqlSessionFactory = sourceSqlSessionFactory;
-    //     }
+    public ReadOnlyJobConfig(
+                JobRepository jobRepository,
+                PlatformTransactionManager transactionManager,
+                @Qualifier("sourceSqlSessionFactory") SqlSessionFactory sourceSqlSessionFactory
+        ) {
+            this.jobRepository = jobRepository;
+            this.transactionManager = transactionManager;
+            this.sourceSqlSessionFactory = sourceSqlSessionFactory;
+        }
 
     @Bean
     public Job readOnlyJob() {

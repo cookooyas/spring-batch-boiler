@@ -1,6 +1,6 @@
 dependencies {
     // common만 가져오면 common이 가진 배치, DB 라이브러리를 모두 쓸 수 있음
-    implementation project(':batch-common')
+    implementation project(':batch-common-v1')
 }
 
 // Job 모듈은 실제로 실행되어야 하므로 bootJar를 활성화합니다.

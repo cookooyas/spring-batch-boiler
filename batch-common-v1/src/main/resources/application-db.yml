@@ -1,0 +1,44 @@
+# spring:
+#   datasource:
+#     # 1. 데이터를 읽어올 원본 DB (MySQL)
+#     # mysql - rockylinux  =>  https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/
+#     source:
+#       driver-class-name: com.mysql.cj.jdbc.Driver
+#       jdbc-url: jdbc:mysql://127.0.0.1:3306/source_db
+#       username: batch
+#       password: Batch1234!
+
+#     # 2. 데이터를 저장하고 배치 정보가 기록될 대상 DB (Postgresql)
+#     target:
+#       driver-class-name: org.postgresql.Driver
+#       jdbc-url: jdbc:postgresql://127.0.0.1:5432/target_db
+#       username: batch
+#       password: Batch1234!
+
+db-pool:
+  common-db:
+    driver-class-name: oracle.jdbc.OracleDriver
+    jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521/XE
+    username: batch
+    password: Batch1234!
+
+  # mysql - rockylinux  =>  https://docs.3rdeyesys.com/docs/database/mysql-mariadb/install/mysql-8-latest-version-install-on-rocky-linux/
+  mysql-db:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/source_db
+    username: batch
+    password: Batch1234!
+
+  # oracle - rockylinux => https://hwoarang757.tistory.com/entry/Rocky-Linux-95-Oracle-21c-XEExpress-Edition-%EC%84%A4%EC%B9%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A7%84%ED%96%89
+  oracle-db:
+    driver-class-name: oracle.jdbc.OracleDriver
+    jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521/XE
+    username: batch
+    password: Batch1234!
+
+  postgresql-db:
+    driver-class-name: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://127.0.0.1:5432/target_db
+    username: batch
+    password: Batch1234!
+  
